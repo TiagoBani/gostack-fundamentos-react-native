@@ -4,8 +4,11 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "postandroid": "adb reverse tcp:3333 tcp:3333",
     "ios": "react-native run-ios",
+    "prestart": "yarn",
     "start": "react-native start",
+    "poststart": "yarn json-server server.json -p 3333",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
@@ -16,7 +19,6 @@
     "@react-navigation/stack": "^5.2.10",
     "axios": "^0.19.2",
     "intl": "^1.2.5",
-    "json-server": "^0.16.1",
     "react": "16.11.0",
     "react-native": "0.62.2",
     "react-native-gesture-handler": "^1.6.1",
@@ -28,6 +30,7 @@
     "styled-components": "^5.1.0"
   },
   "devDependencies": {
+    "json-server": "^0.16.1",
     "@babel/core": "^7.6.2",
     "@babel/runtime": "^7.6.2",
     "@react-native-community/eslint-config": "^1.0.0",
